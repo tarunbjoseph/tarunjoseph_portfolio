@@ -566,7 +566,7 @@ function initExperience() {
           ${exp.logo ? `<img src="${exp.logo}" alt="${exp.organization} Logo" class="exp-logo-img">` : ''}
           <div>
             <h3 class="exp-role">${exp.role}</h3>
-            <div class="exp-org">${exp.organization} • <span style="color:var(--text-muted); font-size:0.85rem;">${exp.location}</span></div>
+            <div class="exp-org">${exp.website ? `<a href="${exp.website}" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; border-bottom:1px dotted var(--border-medium);">${exp.organization} ↗</a>` : exp.organization} • <span style="color:var(--text-muted); font-size:0.85rem;">${exp.location}</span></div>
           </div>
         </div>
         <span class="exp-period">${exp.period}</span>

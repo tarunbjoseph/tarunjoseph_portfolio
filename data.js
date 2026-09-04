@@ -501,15 +501,29 @@ var PORTFOLIO_DATA = {
       ]
     },
     {
-      role: "Lead Technical Trainer & Community Mentor",
-      organization: "SURE NGO (TATA ProEngage) & Make A Difference",
-      logo: null,
-      location: "Social Impact",
-      period: "2019 - 2025",
-      type: "Technical Enablement",
+      role: "Lead Technical Trainer (TATA ProEngage Volunteer)",
+      organization: "SURE Trust",
+      logo: "assets/logos/sure_trust_logo.png",
+      website: "https://www.suretrustforruralyouth.com/",
+      location: "Social Impact & Rural Skilling",
+      period: "2023 - 2025",
+      type: "Technical Enablement & AI Training",
       strategicPoints: [
-        "Led 6-month technical bootcamps for final-year CS students from rural backgrounds, mentoring them through industry-ready project builds.",
-        "Provided academic support and fundamental tutoring to 10+ underprivileged children in shelter homes over two years."
+        "Mentored and led intensive 6-month technical training bootcamps for final-year Computer Science and Engineering students from rural, underprivileged backgrounds.",
+        "Guided students through production-grade project development in Python, Machine Learning, and Cloud DevOps, accelerating their transition into professional engineering roles."
+      ]
+    },
+    {
+      role: "Academic Support Volunteer & Youth Mentor",
+      organization: "Make A Difference (MAD)",
+      logo: "assets/logos/make_a_difference_logo.png",
+      website: "https://www.makeadiff.in/",
+      location: "Social Impact & Youth Equity",
+      period: "2019 - 2021",
+      type: "Community Leadership & Mentorship",
+      strategicPoints: [
+        "Delivered personalized academic tutoring and mentorship to 10+ vulnerable children residing in shelter homes, building foundational STEM literacy and communication skills.",
+        "Mobilized community engagement initiatives and conducted life-skills workshops fostering long-term educational equity and resilience."
       ]
     }
   ],

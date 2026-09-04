@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- Geometric Faceted Vector 'V' Emblem -->
+  <g transform="translate(6, 6)">
+    <!-- Left Wing -->
+    <path d="M4 4L24 44L16 44L0 12L4 4Z" fill="#0f172a"/>
+    <path d="M12 4L24 44L20 44L6 16L12 4Z" fill="#334155"/>
+    <!-- Right Wing -->
+    <path d="M44 4L24 44L32 44L48 12L44 4Z" fill="#0f172a"/>
+    <path d="M36 4L24 44L28 44L42 16L36 4Z" fill="#1e293b"/>
+    <!-- Central Apex Accent -->
+    <polygon points="24,44 21,38 27,38" fill="#2563eb"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="64" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" letter-spacing="0.12em" fill="#0f172a">VECTOR</text>
+  <text x="64" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="12" letter-spacing="0.18em" fill="#64748b">INSTITUTE</text>
+</svg>

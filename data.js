@@ -28,7 +28,7 @@ var PORTFOLIO_DATA = {
   institutions: [
     {
       name: "Vector Institute",
-      logo: "assets/logos/vector_institute.png",
+      logo: "assets/logos/vector_institute.svg",
       role: "Applied AI (Design & Delivery)",
       focus: "Translating frontier AI research into enterprise solutions for premier corporate sponsors."
     },
@@ -452,7 +452,7 @@ var PORTFOLIO_DATA = {
     {
       role: "Applied AI (Design & Delivery)",
       organization: "Vector Institute",
-      logo: "assets/logos/vector_institute.png",
+      logo: "assets/logos/vector_institute.svg",
       location: "Toronto, Canada",
       period: "May 2026 - Present",
       type: "Frontier Research & Industry Translation",

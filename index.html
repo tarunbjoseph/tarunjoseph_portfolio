@@ -8,9 +8,9 @@
   <meta name="keywords" content="Tarun Joseph, AI Solutions Architect, Technical Consultant, Vector Institute, University of Toronto, Applied AI, Generative AI, RAG">
 
   <!-- Mobile Platform Optimization (iOS Safari & Android Chrome) -->
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#0b0f17">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Tarun Joseph">
   <meta name="format-detection" content="telephone=no">
   <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -30,12 +30,11 @@
   <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Anti-FOUC Inline Theme Initialization -->
+  <!-- Anti-FOUC Inline Theme Initialization (Dark Theme Default) -->
   <script>
     (function() {
       var savedTheme = localStorage.getItem('tj_theme');
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+      var theme = savedTheme ? savedTheme : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
       var metaTheme = document.querySelector('meta[name="theme-color"]');
       if (metaTheme) {
@@ -586,7 +585,7 @@
     <div class="twin-drawer-head">
       <div style="display:flex; align-items:center; gap:8px;">
         <span style="font-weight:700; font-size:0.95rem;">Tarun.AI</span>
-        <span style="font-size:0.75rem; color:var(--text-muted); background:#e2e8f0; padding:2px 6px; border-radius:4px;">Digital Twin</span>
+        <span class="twin-badge">Digital Twin</span>
       </div>
       <button id="twin-close-btn" class="twin-drawer-close" aria-label="Close Digital Twin">✕</button>
     </div>

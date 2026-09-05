@@ -58,17 +58,17 @@ function initThemeToggle() {
     });
   }
 
-  // Get current active theme
+  // Get current active theme (defaults to dark)
   const activeTheme = (docEl && docEl.getAttribute('data-theme')) || 
                       (typeof localStorage !== 'undefined' && localStorage.getItem('tj_theme')) || 
-                      (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                      'dark';
 
   updateThemeUI(activeTheme);
 
   toggleBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
       if (e && e.preventDefault) e.preventDefault();
-      const current = (docEl && docEl.getAttribute('data-theme')) || 'light';
+      const current = (docEl && docEl.getAttribute('data-theme')) || 'dark';
       const nextTheme = current === 'dark' ? 'light' : 'dark';
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('tj_theme', nextTheme);

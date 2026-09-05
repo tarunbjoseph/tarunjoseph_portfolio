@@ -2655,44 +2655,46 @@ dialog::backdrop {
   flex-wrap: wrap;
 }
 
-/* Dark Theme Minimal Subtle White Backdrop for Logos (Authentic, Consistent, Unobtrusive) */
+/* Dark Theme Crisp White Plate for Logos (Ensures 100% Visibility, Authentic Colors & Balanced Proportions) */
 [data-theme="dark"] .inst-logo-container {
-  background: rgba(255, 255, 255, 0.94);
-  padding: 4px 10px;
-  border-radius: 6px;
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  height: 40px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  height: 48px;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="dark"] .inst-logo-img {
-  max-height: 30px;
-  max-width: 150px;
+  height: 36px;
+  max-height: 36px;
+  width: auto;
+  max-width: 160px;
   object-fit: contain;
   filter: none !important;
 }
 
 [data-theme="dark"] .exp-logo-img {
-  background: rgba(255, 255, 255, 0.94);
-  padding: 4px 8px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.2);
   filter: none !important;
 }
 
 [data-theme="dark"] .edu-logo-strip {
-  background: rgba(255, 255, 255, 0.94);
-  padding: 4px 10px;
-  border-radius: 6px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -2701,12 +2703,12 @@ dialog::backdrop {
 }
 
 [data-theme="dark"] .cert-logo-wrapper {
-  background: rgba(255, 255, 255, 0.94);
-  padding: 4px 8px;
-  border-radius: 6px;
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 

@@ -8,9 +8,9 @@
   <meta name="keywords" content="Tarun Joseph, AI Solutions Architect, Technical Consultant, Vector Institute, University of Toronto, Applied AI, Generative AI, RAG">
 
   <!-- Mobile Platform Optimization (iOS Safari & Android Chrome) -->
-  <meta name="theme-color" content="#0b0f17">
+  <meta name="theme-color" content="#f8fafc">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Tarun Joseph">
   <meta name="format-detection" content="telephone=no">
   <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -30,11 +30,11 @@
   <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Anti-FOUC Inline Theme Initialization (Dark Theme Default) -->
+  <!-- Anti-FOUC Inline Theme Initialization (Adaptive, Light Theme Default) -->
   <script>
     (function() {
       var savedTheme = localStorage.getItem('tj_theme');
-      var theme = savedTheme ? savedTheme : 'dark';
+      var theme = savedTheme ? savedTheme : 'light';
       document.documentElement.setAttribute('data-theme', theme);
       var metaTheme = document.querySelector('meta[name="theme-color"]');
       if (metaTheme) {

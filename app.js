@@ -23,6 +23,8 @@ function initApp() {
   initContactHub();
   initDigitalTwin();
   initModal();
+  initMobileNav();
+  initScrollspy();
 }
 
 if (document.readyState === 'loading') {
@@ -173,7 +175,7 @@ function selectSimScenario(idx) {
   const stagesContainer = document.getElementById('sim-pipeline-stages');
   if (stagesContainer) {
     stagesContainer.innerHTML = scen.stages.map((st, sIdx) => `
-      <div class="sim-stage-node ${sIdx === 0 ? 'inspected' : ''}" id="sim-stage-${sIdx}" onclick="inspectSimStage(${sIdx})">
+      <div class="sim-stage-node ${sIdx === 0 ? 'inspected' : ''}" id="sim-stage-${sIdx}" onclick="inspectSimStage(${sIdx}, true)">
         <div class="stage-node-top">
           <div class="stage-node-title-group">
             <span class="stage-num-badge">${sIdx + 1}</span>
@@ -290,7 +292,7 @@ function updateSimMetrics() {
   }
 }
 
-function inspectSimStage(sIdx) {
+function inspectSimStage(sIdx, isUserClick = false) {
   inspectedStageIdx = sIdx;
   const scen = PORTFOLIO_DATA.simulatorScenarios[currentSimScenario];
   if (!scen || !scen.stages[sIdx]) return;
@@ -318,6 +320,17 @@ function inspectSimStage(sIdx) {
 
   const detailsEl = document.getElementById('insp-stage-details');
   if (detailsEl) detailsEl.textContent = stage.details;
+
+  // On mobile touch viewports, gently guide the user to the updated inspector
+  if (isUserClick && typeof window !== 'undefined' && window.innerWidth <= 1024) {
+    const inspBox = document.getElementById('stage-inspector-box');
+    if (inspBox && typeof inspBox.scrollIntoView === 'function') {
+      inspBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      inspBox.classList.remove('inspector-pulse');
+      void inspBox.offsetWidth; // Force reflow
+      inspBox.classList.add('inspector-pulse');
+    }
+  }
 }
 
 function executeInteractivePipeline() {
@@ -640,10 +653,20 @@ function initContactHub() {
   const p = PORTFOLIO_DATA.personal;
 
   const emailEl = document.getElementById('contact-email-val');
-  if (emailEl) emailEl.textContent = p.email;
+  if (emailEl) {
+    emailEl.textContent = p.email;
+    if (emailEl.tagName === 'A') {
+      emailEl.href = `mailto:${p.email}`;
+    }
+  }
 
   const phoneEl = document.getElementById('contact-phone-val');
-  if (phoneEl) phoneEl.textContent = p.phone;
+  if (phoneEl) {
+    phoneEl.textContent = p.phone;
+    if (phoneEl.tagName === 'A') {
+      phoneEl.href = `tel:${p.phone.replace(/[^+\d]/g, '')}`;
+    }
+  }
 
   const locEl = document.getElementById('contact-loc-val');
   if (locEl) locEl.textContent = p.location;
@@ -670,7 +693,8 @@ function initDigitalTwin() {
 
   if (!trigger || !drawer) return;
 
-  trigger.addEventListener('click', () => {
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
     drawer.classList.toggle('open');
   });
 
@@ -679,6 +703,21 @@ function initDigitalTwin() {
       drawer.classList.remove('open');
     });
   }
+
+  // Dismiss drawer when clicking outside or pressing Escape on mobile
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('open')) {
+      if (!drawer.contains(e.target) && !trigger.contains(e.target)) {
+        drawer.classList.remove('open');
+      }
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+    }
+  });
 
   if (promptsContainer) {
     const twinData = PORTFOLIO_DATA.digitalTwin;
@@ -716,6 +755,10 @@ function initModal() {
     if (!inBox) modal.close();
   });
 
+  modal.addEventListener('close', () => {
+    document.body.style.overflow = '';
+  });
+
   const closeBtn = document.getElementById('dialog-close-btn');
   if (closeBtn) closeBtn.addEventListener('click', () => modal.close());
 }
@@ -749,6 +792,7 @@ window.openCaseDialog = function(projectId) {
     pillsBox.innerHTML = proj.techStack.map(t => `<span class="case-tech-pill">${t}</span>`).join('');
   }
 
+  document.body.style.overflow = 'hidden';
   modal.showModal();
 };
 
@@ -774,4 +818,95 @@ function showToast(msg) {
   toast.innerHTML = `<span>✓</span> <span>${msg}</span>`;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+/**
+ * Mobile Navigation Drawer Controls
+ */
+function initMobileNav() {
+  const backdrop = document.querySelector('.mobile-drawer-backdrop');
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMobileMenu);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+}
+
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if (!drawer) return;
+
+  if (drawer.classList.contains('open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  if (!drawer) return;
+
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+  if (toggleBtn) {
+    toggleBtn.classList.add('open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  if (!drawer) return;
+
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden', 'true');
+  if (toggleBtn) {
+    toggleBtn.classList.remove('open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  document.body.style.overflow = '';
+}
+
+/**
+ * Scrollspy: Active section tracking for Desktop & Mobile Nav
+ */
+function initScrollspy() {
+  if (typeof IntersectionObserver === 'undefined') return;
+
+  const sections = document.querySelectorAll('section[id]');
+  const desktopLinks = document.querySelectorAll('.nav-link');
+  const mobileLinks = document.querySelectorAll('.mobile-drawer-link');
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        desktopLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+        mobileLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -65% 0px'
+  });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+// Global browser window exports
+if (typeof window !== 'undefined') {
+  window.toggleMobileMenu = toggleMobileMenu;
+  window.openMobileMenu = openMobileMenu;
+  window.closeMobileMenu = closeMobileMenu;
 }

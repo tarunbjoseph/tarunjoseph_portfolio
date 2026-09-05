@@ -105,11 +105,71 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="assets/resumes/Tarun_Joseph_Resume_Prof_New.pdf" download class="btn-pill-subtle resume-link-trigger">
+        <a href="assets/resumes/Tarun_Joseph_Resume_Prof_New.pdf" download class="btn-pill-subtle resume-link-trigger header-cv-btn">
           <span>Executive CV</span>
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
         </a>
-        <a href="#contact" class="btn-primary-dark">Direct Channel</a>
+        <a href="#contact" class="btn-primary-dark header-contact-btn">Direct Channel</a>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-drawer-backdrop" onclick="closeMobileMenu()"></div>
+      <div class="mobile-drawer-content">
+        <div class="mobile-drawer-header">
+          <div class="mobile-drawer-brand">
+            <span class="brand-name" style="font-size:1.1rem;">Tarun Joseph</span>
+            <span class="brand-tag" style="font-size:0.7rem; color:var(--text-muted);">Navigation Menu</span>
+          </div>
+          <button class="mobile-drawer-close" aria-label="Close menu" onclick="closeMobileMenu()">✕</button>
+        </div>
+        <div class="mobile-drawer-links">
+          <a href="#overview" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Overview</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#simulator" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Systems Lab (Interactive)</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#perspectives" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Dual-Lens (Advisory & ML)</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#cases" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Deliverables & Case Studies</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#experience" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Leadership & Track Record</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#credentials" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Academic Rigor & Credentials</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+          <a href="#contact" class="mobile-drawer-link" onclick="closeMobileMenu()">
+            <span>Direct Fast-Track Channel</span>
+            <span class="drawer-arrow">→</span>
+          </a>
+        </div>
+        <div class="mobile-drawer-footer">
+          <a href="assets/resumes/Tarun_Joseph_Resume_Prof_New.pdf" download class="btn-executive-main resume-link-trigger" onclick="closeMobileMenu()" style="width:100%; justify-content:center;">
+            <span>Download Executive CV (PDF)</span>
+            <span>↓</span>
+          </a>
+          <div class="mobile-drawer-socials">
+            <a href="https://linkedin.com/in/tarunjoseph25" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/tarunbjoseph" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://huggingface.co/TarunJoseph101" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -432,12 +492,12 @@
         <div class="contact-channels">
           <div class="channel-item">
             <span class="channel-icon">✉</span>
-            <span id="contact-email-val">tarunb.joseph@mail.utoronto.ca</span>
+            <a href="mailto:tarunb.joseph@mail.utoronto.ca" id="contact-email-val" class="channel-link">tarunb.joseph@mail.utoronto.ca</a>
             <button onclick="copyToClipboard('tarunb.joseph@mail.utoronto.ca', 'Email')" class="btn-pill-subtle" style="padding: 2px 8px; font-size: 0.75rem;">Copy</button>
           </div>
           <div class="channel-item">
             <span class="channel-icon">📞</span>
-            <span id="contact-phone-val">+1 (437) 237-5615</span>
+            <a href="tel:+14372375615" id="contact-phone-val" class="channel-link">+1 (437) 237-5615</a>
           </div>
           <div class="channel-item">
             <span class="channel-icon">📍</span>

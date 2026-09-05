@@ -13,6 +13,7 @@ var isSimRunning = false;
 var activeProjectFilter = 'all';
 
 function initApp() {
+  initThemeToggle();
   initHero();
   initInstitutions();
   initSimulator();
@@ -31,6 +32,68 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
+}
+
+/**
+ * Executive Theme Toggle Engine (Light / Dark Mode)
+ * Synchronizes header & mobile drawer buttons, anti-FOUC state,
+ * browser meta theme-color, and localStorage.
+ */
+function initThemeToggle() {
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const docEl = document.documentElement || (document.body ? document.body.parentElement : null);
+
+  function updateThemeUI(theme) {
+    if (docEl) {
+      docEl.setAttribute('data-theme', theme);
+    }
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? '#0b0f17' : '#f8fafc');
+    }
+    toggleBtns.forEach(btn => {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      btn.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+      btn.setAttribute('title', `Switch to ${nextTheme} theme`);
+    });
+  }
+
+  // Get current active theme
+  const activeTheme = (docEl && docEl.getAttribute('data-theme')) || 
+                      (typeof localStorage !== 'undefined' && localStorage.getItem('tj_theme')) || 
+                      (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  updateThemeUI(activeTheme);
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const current = (docEl && docEl.getAttribute('data-theme')) || 'light';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('tj_theme', nextTheme);
+      }
+      updateThemeUI(nextTheme);
+
+      if (typeof showToast === 'function') {
+        showToast(`Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`);
+      }
+    });
+  });
+
+  // Listen for OS system theme changes if user hasn't set an explicit manual preference
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    try {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (typeof localStorage !== 'undefined' && !localStorage.getItem('tj_theme')) {
+          const autoTheme = e.matches ? 'dark' : 'light';
+          updateThemeUI(autoTheme);
+        }
+      });
+    } catch (err) {
+      // Fallback for older browsers
+    }
+  }
 }
 
 /**

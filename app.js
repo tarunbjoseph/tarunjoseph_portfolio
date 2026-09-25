@@ -561,6 +561,24 @@ function renderPerspective() {
  */
 function initProjects() {
   const filterBtns = document.querySelectorAll('.project-filter-btn');
+
+  // Dynamically synchronize filter counts with data source
+  if (typeof PORTFOLIO_DATA !== 'undefined' && Array.isArray(PORTFOLIO_DATA.projects)) {
+    const counts = {
+      all: PORTFOLIO_DATA.projects.length,
+      genai: PORTFOLIO_DATA.projects.filter(p => p.category === 'genai').length,
+      vision: PORTFOLIO_DATA.projects.filter(p => p.category === 'vision').length,
+      systems: PORTFOLIO_DATA.projects.filter(p => p.category === 'systems').length
+    };
+    filterBtns.forEach(btn => {
+      const f = btn.dataset.filter;
+      if (f === 'all') btn.textContent = `All Systems (${counts.all})`;
+      else if (f === 'genai') btn.textContent = `Enterprise GenAI & RAG (${counts.genai})`;
+      else if (f === 'vision') btn.textContent = `Computer Vision & Transformers (${counts.vision})`;
+      else if (f === 'systems') btn.textContent = `Predictive Analytics & ML (${counts.systems})`;
+    });
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       filterBtns.forEach(b => b.classList.remove('active'));

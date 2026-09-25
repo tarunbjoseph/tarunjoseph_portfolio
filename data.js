@@ -6,10 +6,10 @@
 var PORTFOLIO_DATA = {
   personal: {
     name: "Tarun Joseph",
-    title: "AI Solutions Architect & Technical Consultant",
-    tagline: "Bridging the divide between high-level business strategy and enterprise AI deployment. Currently accelerating industry AI translation at the Vector Institute while pursuing graduate engineering at the University of Toronto, backed by 4 years of large-scale ML systems ownership at Tata Consultancy Services.",
-    location: "Toronto, Ontario, Canada",
-    statusBadge: "Open to AI Solutions Architecture, TPM & Applied AI Roles",
+    title: "AI Engineer · Forward Deployed Engineering",
+    tagline: "Building and deploying production-grade AI systems, multi-agent architectures, and fine-tuned language models. Spearheading multi-agent governance and causal reasoning platforms at the Vector Institute × SafeAlign AI, backed by graduate engineering at the University of Toronto (3.8/4 GPA) and large-scale ML systems ownership at Tata Consultancy Services.",
+    location: "Toronto, Canada",
+    statusBadge: "AI Engineer · Forward Deployed Engineering",
     email: "tarunb.joseph@mail.utoronto.ca",
     altEmail: "tarunbjoseph@gmail.com",
     phone: "+1 (437) 237-5615",
@@ -18,7 +18,8 @@ var PORTFOLIO_DATA = {
     huggingface: "https://huggingface.co/TarunJoseph101",
     photo: "assets/images/tarun_executive.jpg",
     resumes: {
-      industry: "assets/resumes/Tarun_Joseph_Resume_Prof_New.pdf",
+      latest: "assets/resumes/Tarun_Joseph_Resume_Fall26.pdf",
+      industry: "assets/resumes/Tarun_Joseph_Resume_Fall26.pdf",
       academic: "assets/resumes/Tarun_Joseph_Resume_Aug26.pdf",
       dossier: "assets/resumes/Tarun_Joseph_Resume.pdf"
     }
@@ -27,22 +28,22 @@ var PORTFOLIO_DATA = {
   // Institutional Provenance with Official Logos
   institutions: [
     {
-      name: "Vector Institute",
+      name: "Vector Institute × SafeAlign AI",
       logo: "assets/logos/vector_institute.png",
-      role: "Applied AI (Design & Delivery)",
-      focus: "Translating frontier AI research into enterprise solutions for premier corporate sponsors."
+      role: "Machine Learning Associate & Program Delivery",
+      focus: "Building security, governance & observability platforms for multi-agent systems, causal knowledge graphs, and SLM fine-tuning."
     },
     {
       name: "University of Toronto",
       logo: "assets/logos/university_of_toronto.svg",
       role: "Graduate Teaching Assistant & MEng Candidate",
-      focus: "Advising senior AI capstones with industry clients; top academic standing (A+/A)."
+      focus: "Teaching AI/ML Capstones (MIE429) & Big Data Analytics (MIE1628); 3.8/4 GPA with ELITE Emphasis."
     },
     {
       name: "Tata Consultancy Services",
       logo: "assets/logos/tcs_logo.svg",
-      role: "Machine Learning Engineer & Data Engineer",
-      focus: "Architected and delivered production RAG and agentic systems serving 600,000+ users."
+      role: "Machine Learning Engineer",
+      focus: "Deployed production RAG chatbots, support-ticket automation agents, and GenAI bootcamps across 600,000+ users."
     }
   ],
 
@@ -311,37 +312,77 @@ var PORTFOLIO_DATA = {
     },
     engineering: {
       badge: "Deep Learning & Production Engineering",
-      leadTitle: "Building Resilient, High-Throughput AI Systems",
-      leadDesc: "Hands-on engineering mastery spanning generative AI pipelines, retrieval-augmented generation (RAG), autonomous agent loops (Llama 3), computer vision transformers, and robust data warehousing.",
+      leadTitle: "Building Resilient, High-Throughput AI Systems & Multi-Agent Architectures",
+      leadDesc: "Hands-on engineering mastery spanning multi-agent orchestration, small language model (SLM) fine-tuning, retrieval-augmented generation (RAG), tool calling, and full-stack cloud deployment.",
       metrics: [
-        { value: "30+ FPS", label: "Real-Time Inference Speed", detail: "Low-latency ASL vision transformer & landmark tracking" },
-        { value: "92%+", label: "Forensic Benchmark Accuracy", detail: "Global Vision Transformer deepfake challenge platform" },
-        { value: "< 50ms", label: "Inference & Retrieval Latency", detail: "Optimized hybrid vector search & embedding caching" },
+        { value: "3.8/4", label: "Graduate GPA (U of T)", detail: "ELITE Emphasis in Data Analytics & Machine Learning" },
+        { value: "600K+", label: "Enterprise Scale", detail: "RAG & ticket agents deployed for global associates" },
+        { value: "5+ hrs", label: "Weekly Dev Time Saved", detail: "Autonomous Llama 3 support agent PoC to MVP" },
         { value: "Top 1%", label: "National Engineering Cadre", detail: "Selected for TCS Digital elite engineering cadre" }
       ],
       coreStrengths: [
         {
-          title: "Generative AI & Agentic Systems",
-          desc: "Llama 3, GPT-4, LangChain, LangGraph, prompt orchestration, recursive chunking, and self-correcting agent loops."
+          title: "LLMs, Agents & Tool Calling",
+          desc: "Claude API / Claude Code, OpenAI APIs, LangChain, MCP (Model Context Protocol), multi-agent orchestration, tool calling, LLM evaluation & guardrails."
+        },
+        {
+          title: "SLM Fine-Tuning & Knowledge Graphs",
+          desc: "Fine-tuning small language models (SLM) on PyTorch and Hugging Face Transformers for multi-hop causal reasoning over compliance knowledge graphs."
+        },
+        {
+          title: "Full-Stack Deployment & CI/CD",
+          desc: "FastAPI, Streamlit, Gradio, Docker, GCP, AWS, Azure, CI/CD (Harness), PostgreSQL, and Git."
         },
         {
           title: "Computer Vision & Transformers",
           desc: "MediaPipe 3D landmark extraction, Vision Transformers (ViT), PyTorch model optimization, and gesture translation."
-        },
-        {
-          title: "Enterprise Data Pipelines",
-          desc: "PostgreSQL, PL/SQL, Informatica, ETL resilience, unified schema design, and production monitoring."
-        },
-        {
-          title: "Cloud & MLOps Infrastructure",
-          desc: "AWS Certified AI Practitioner & Azure Certified Data Scientist. REST API deployment, Docker, and CI/CD."
         }
       ]
     }
   },
 
-  // Case Studies
+  // Case Studies & Engineering Projects
   projects: [
+    {
+      id: "sentinel-multi-agent-defense",
+      title: "Sentinel: Multi-Agent Prompt-Injection Defense Arena",
+      subtitle: "Red-Team/Blue-Team System with Fine-Tuned SLM Guardian for Tool-Using Agents",
+      category: "genai",
+      tag: "UofT ECE1786 • Frontier AI Security",
+      client: "University of Toronto (ECE1786)",
+      year: "September 2026 – Present",
+      impactMetric: "Attacker vs. Guardian Adversarial Evaluation Benchmark",
+      strategicFocus: "Architecting a dynamic red-team/blue-team security arena for tool-using AI agents, evaluating autonomous attack vectors and automated containment strategies.",
+      technicalFocus: "Building an adversarial simulation harness where an attacker agent injects indirect/direct prompt-injection payloads into tool-using target agents, while a Guardian harness detects, responds, and recovers. Fine-tuning an SLM classifier as the detection component, evaluated on attack success rate (ASR) and task utility against open-source benchmarks.",
+      techStack: ["Python", "PyTorch", "Hugging Face", "SLM Fine-Tuning", "Multi-Agent Orchestration", "Tool Calling", "LLM Evaluation"],
+      architectureSteps: [
+        "Adversarial Payload Synthesis (Attacker Agent)",
+        "Tool-Calling Target Execution Loop",
+        "Fine-Tuned SLM Guardian Classification",
+        "Autonomous Containment & Recovery Protocol"
+      ],
+      githubUrl: "https://github.com/tarunbjoseph"
+    },
+    {
+      id: "support-ticket-agent",
+      title: "Support Ticket Automation Agent",
+      subtitle: "Autonomous IT Support Agent with Tool-Calling & Vector-Store Memory",
+      category: "genai",
+      tag: "Enterprise MVP",
+      client: "Tata Consultancy Services (600,000 Employees)",
+      year: "March 2025",
+      impactMetric: "5+ Hours Saved / Developer / Week",
+      strategicFocus: "Eliminated repetitive IT support ticket drag across 600,000 employees without human intervention, defining SLA metrics with service managers and proving high ROI with open-source LLMs.",
+      technicalFocus: "Designed a proof-of-concept (PoC) and built an MVP for an autonomous IT support agent using Llama 3 with tool-calling capabilities, vector-store memory, and semantic routing. Iterated over 3 agile sprints on stakeholder feedback.",
+      techStack: ["Llama 3", "Python", "Open-Source LLMs", "Vector Databases", "Semantic Routing", "Tool Calling", "REST APIs"],
+      architectureSteps: [
+        "Support Ticket Ingestion & Entity Parsing",
+        "Vector-Store Context & Semantic Routing",
+        "Autonomous Tool Calling & Action Execution",
+        "Draft Resolution Synthesis & Closure"
+      ],
+      githubUrl: null
+    },
     {
       id: "enterprise-rag-platform",
       title: "Enterprise Knowledge & Coding Intelligence Platform",
@@ -450,41 +491,55 @@ var PORTFOLIO_DATA = {
   // Professional Experience with Official Logos
   experience: [
     {
-      role: "Applied AI (Design & Delivery)",
-      organization: "Vector Institute",
+      role: "Machine Learning Associate",
+      organization: "Vector Institute × SafeAlign AI (Fastlane Applied Projects)",
       logo: "assets/logos/vector_institute.png",
       location: "Toronto, Canada",
-      period: "May 2026 - Present",
-      type: "Frontier Research & Industry Translation",
+      period: "August 2026 – Present",
+      type: "Multi-Agent Security, Governance & Observability",
       strategicPoints: [
-        "Acting as the vital technical translator between frontier AI research scientists and corporate industry sponsors, scoping practical implementations for real-world enterprise constraints.",
-        "Overseeing model delivery workflows, ensuring data governance, ethical compliance, and business alignment across multidisciplinary partner teams."
+        "Own the governance and policy lane of SafeAlign's security and observability platform for multi-agent AI systems, translating regulatory and policy requirements (pilot: Canada's OSFI E-23, MITRE, EU AI, OWASP) into a knowledge graph that grounds agent-risk decisions.",
+        "Fine-tuning a small language model (SLM) to reason over that knowledge graph through multi-hop causal traversal, producing traceable, policy-cited compliance decisions.",
+        "Own deployment and client tuning for the lane across two paths: fully local, on-prem inference for strongly regulated clients, and a cloud variant for less-regulated clients."
       ]
     },
     {
-      role: "Graduate Teaching Assistant & Capstone Advisor",
+      role: "AI Program Design & Delivery Intern",
+      organization: "Vector Institute",
+      logo: "assets/logos/vector_institute.png",
+      location: "Toronto, Canada",
+      period: "May 2026 – August 2026",
+      type: "Agentic AI Enablement & Industry Translation",
+      strategicPoints: [
+        "Led end-to-end delivery of the Agentic AI Evaluation bootcamp, from onboarding through Showcase Day (9.0/10 participant rating), and resolved technical and operational blockers for 3+ industry teams.",
+        "Automated the bootcamp lifecycle using the Slack API and Google Apps Script, covering 2 SOPs, team registration, and certificate generation for 13 teams, which saved 5+ hours of prep per bootcamp.",
+        "Delivered 3 bootcamps, an applied AI cohort, an ICML 2026 speaker series, and a senior-leader AI ROI roundtable with a Director and 5+ PMs, securing 10+ team registrations and curating 4+ speakers."
+      ]
+    },
+    {
+      role: "Graduate Teaching Assistant",
       organization: "University of Toronto",
       logo: "assets/logos/university_of_toronto.svg",
       location: "Toronto, Canada",
-      period: "September 2025 - Present",
-      type: "Academic Leadership & Mentorship",
+      period: "September 2025 – Present",
+      type: "Academic Leadership & Technical Instruction",
       strategicPoints: [
-        "Advising 45+ senior engineering students across 10 teams executing industry-sponsored AI Capstone deliverables (MIE429).",
-        "Elected Departmental Steward for CUPE 3902 Unit 1, safeguarding academic integrity and collaborative standards.",
-        "Serving as VP of Professional Development for the MIE Graduate Student Association (AMIGAS), curating industry networking forums."
+        "MIE429 AI/ML Capstone Design: mentored 45 students building AI prototypes and resolved technical blockers in meetings with industry clients.",
+        "MIE1628 (Cloud-based Big Data Analytics): Ran tutorials for 100+ students on Data Analytics.",
+        "Elected Departmental Steward for CUPE 3902 Unit 1 and VP of Professional Development for the MIE Graduate Student Association (AMIGAS)."
       ]
     },
     {
       role: "Machine Learning Engineer",
-      organization: "Tata Consultancy Services",
+      organization: "Tata Consultancy Services (TCS)",
       logo: "assets/logos/tcs_logo.svg",
-      location: "Enterprise Delivery",
-      period: "January 2023 - May 2025",
-      type: "Enterprise AI Solutions",
+      location: "Enterprise AI Delivery",
+      period: "January 2023 – May 2025",
+      type: "Enterprise AI Solutions & Agentic Systems",
       strategicPoints: [
-        "Architected and deployed enterprise GenAI solutions (RAG assistants, Llama 3 agents) used daily by over 600,000 associates globally.",
-        "Led cross-functional hackathons and quarterly coding assessments for 10,000+ associates per quarter, directly driving professional promotions.",
-        "Conducted deep-skilling bootcamps on Generative AI and Python as a certified Subject Matter Expert (SME), increasing platform learning hours by 13% in FY24."
+        "Deployed GPT-3.5- and Llama 3-powered RAG chatbots and AI agents on TCS's internal EdTech platform, serving 600,000 associates globally.",
+        "Built a support-ticket automation agent from PoC to MVP using open-source LLMs, with vector-store memory, semantic routing, and API tool calls. Iterated over 3 sprints on stakeholder feedback, saving 5+ hours/week.",
+        "Led GenAI bootcamps for 10,000+ associates, turning model capabilities into practical workflows for non-technical teams and driving a 13% increase in platform engagement."
       ]
     },
     {
@@ -492,7 +547,7 @@ var PORTFOLIO_DATA = {
       organization: "Tata Consultancy Services",
       logo: "assets/logos/tcs_logo.svg",
       location: "Talent Development",
-      period: "January 2022 - December 2022",
+      period: "January 2022 – December 2022",
       type: "Data Architecture & Business Analytics",
       strategicPoints: [
         "Engineered robust PL/SQL database pipelines and ETL workflows using Informatica and pgAdmin, minimizing downtime for mission-critical employee portals.",
@@ -531,26 +586,26 @@ var PORTFOLIO_DATA = {
   // Academic Credentials with Official Logo
   education: [
     {
-      degree: "Master of Engineering (MEng) — Data Analytics & AI",
-      institution: "University of Toronto",
+      degree: "Master of Engineering (MEng) — Industrial Engineering",
+      institution: "University of Toronto, Canada",
       logo: "assets/logos/university_of_toronto.svg",
       location: "Toronto, Canada",
-      period: "2025 - Present",
-      status: "Graduate Standing: A / A+",
+      period: "September 2025 – Present",
+      status: "GPA: 3.8/4 • Emphasis: Data Analytics & Machine Learning, ELITE",
       courses: [
-        { name: "Data Science Methods & Statistical Learning", grade: "A+" },
-        { name: "Deep Learning Architectures", grade: "A" },
-        { name: "Foundations of Data Analytics & Machine Learning", grade: "A" },
-        { name: "Applications of Natural Language Processing", grade: "Upcoming" }
+        { name: "Deep Learning", grade: "A" },
+        { name: "Data Science & Statistics", grade: "A+" },
+        { name: "Natural Language Processing", grade: "Completed" },
+        { name: "HR Management", grade: "Completed" }
       ]
     },
     {
-      degree: "Bachelor of Technology (BTech) — Industrial Engineering",
-      institution: "College of Engineering Trivandrum (CET)",
+      degree: "Bachelor of Technology (B. Tech) — Industrial Engineering",
+      institution: "College of Engineering Trivandrum, India",
       logo: "assets/logos/cet_logo.jpg",
       location: "India",
-      period: "2017 - 2021",
-      status: "Graduated with 8.0/10 CGPA",
+      period: "August 2017 – June 2021",
+      status: "First Class with Distinction (8.0/10 CGPA)",
       courses: [
         { name: "Operations Research & Simulation", grade: "Distinction" },
         { name: "Statistical Data Analysis with R & Python", grade: "Distinction" }
@@ -560,6 +615,14 @@ var PORTFOLIO_DATA = {
 
   // Verified Industry Credentials with Official Logos
   certifications: [
+    {
+      title: "Google: Generative AI Leader Certification",
+      issuer: "Google",
+      logo: "assets/logos/google_cert.svg",
+      date: "2026",
+      verifyUrl: null,
+      badge: "Executive GenAI"
+    },
     {
       title: "AWS Certified AI Practitioner",
       issuer: "Amazon Web Services",
@@ -575,6 +638,14 @@ var PORTFOLIO_DATA = {
       date: "2024",
       verifyUrl: "https://learn.microsoft.com",
       badge: "Enterprise ML"
+    },
+    {
+      title: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      logo: "assets/logos/aws_certified.svg",
+      date: "2023",
+      verifyUrl: "https://www.credly.com",
+      badge: "Cloud Architecture"
     },
     {
       title: "Generative AI and Large Language Models (Gold Certificate: 90%)",
@@ -606,24 +677,24 @@ var PORTFOLIO_DATA = {
   digitalTwin: {
     name: "Tarun.AI",
     subtitle: "Interactive Digital Twin",
-    tagline: "Trained on Tarun's systems architecture philosophy, enterprise deliverables, and research background.",
+    tagline: "Trained on Tarun's forward-deployed engineering philosophy, multi-agent architectures, and enterprise deliverables.",
     huggingfaceSpaceUrl: "https://huggingface.co/TarunJoseph101",
     samplePrompts: [
       {
-        q: "What is Tarun's approach to AI solutions architecture?",
-        a: "Tarun treats AI not as an isolated model, but as a holistic business system. He begins with problem-scoping and stakeholder alignment, selects architectures based on operational constraints (e.g., Llama 3 for local privacy vs. cloud APIs for speed), establishes guardrails, and actively drives user adoption."
+        q: "What is Tarun's role at Vector Institute and SafeAlign AI?",
+        a: "Tarun is a Machine Learning Associate for the Vector Institute × SafeAlign AI Fastlane project, where he owns the governance and policy lane for multi-agent AI systems. He translates regulatory standards (OSFI E-23, MITRE, EU AI, OWASP) into knowledge graphs and fine-tunes Small Language Models (SLMs) for multi-hop causal reasoning to deliver policy-cited compliance decisions."
+      },
+      {
+        q: "Tell me about Tarun's project Sentinel.",
+        a: "Sentinel is a Multi-Agent Prompt-Injection Defense Arena developed at UofT (ECE1786). It features a red-team/blue-team framework where an attacker agent injects adversarial payloads into tool-using target agents, while an SLM-based Guardian harness detects, contains, and recovers from prompt-injection exploits."
+      },
+      {
+        q: "What are Tarun's core technical competencies?",
+        a: "Tarun specializes in LLMs and agents (Claude API/Claude Code, OpenAI APIs, LangChain, MCP, tool calling, multi-agent orchestration, guardrails), SLM fine-tuning and knowledge graphs (PyTorch, Hugging Face Transformers), full-stack AI deployment (FastAPI, Streamlit/Gradio, Docker, GCP, AWS, Azure, Harness CI/CD), and enterprise ML systems."
       },
       {
         q: "How did Tarun deliver value at Tata Consultancy Services?",
-        a: "At TCS, Tarun led the deployment of an enterprise RAG assistant serving 600,000+ associates (saving 30% in technical inquiry time) and engineered an autonomous Llama 3 agent for ticket triage that reclaimed 5+ hours per week per developer."
-      },
-      {
-        q: "What is his current focus at the Vector Institute and U of T?",
-        a: "At Vector Institute, he serves in the Design & Delivery team as a technical translator between research scientists and corporate sponsors. At U of T, he maintains top graduate grades (A+/A) and leads the Real-Time ASL Fingerspelling Translator project."
-      },
-      {
-        q: "Does Tarun have non-technical and leadership experience?",
-        a: "Yes. He is VP of Professional Development for the AMIGAS Graduate Association at U of T, a CUPE 3902 Departmental Steward, and has trained over 10,000 corporate associates and rural students across 5+ years of volunteer and professional teaching."
+        a: "At TCS, Tarun deployed GPT-3.5- and Llama 3-powered RAG chatbots and agents serving 600,000+ associates globally, built an autonomous support-ticket automation agent that saved 5+ hours/week per developer, and led GenAI bootcamps for 10,000+ associates driving a 13% increase in platform engagement."
       }
     ]
   }

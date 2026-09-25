@@ -19,8 +19,9 @@ var PORTFOLIO_DATA = {
     photo: "assets/images/tarun_executive.jpg",
     resumes: {
       latest: "assets/resumes/Tarun_Joseph_Resume_Fall26.pdf",
+      cv: "assets/resumes/Tarun_Joseph_CV.pdf",
       industry: "assets/resumes/Tarun_Joseph_Resume_Fall26.pdf",
-      academic: "assets/resumes/Tarun_Joseph_Resume_Aug26.pdf",
+      academic: "assets/resumes/Tarun_Joseph_CV.pdf",
       dossier: "assets/resumes/Tarun_Joseph_Resume.pdf"
     }
   },

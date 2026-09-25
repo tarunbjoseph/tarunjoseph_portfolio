@@ -114,9 +114,16 @@ function initHero() {
   const bioEl = document.getElementById('hero-narrative');
   if (bioEl) bioEl.textContent = p.tagline;
 
+  // Wire Latest Resume triggers
   const resumeBtns = document.querySelectorAll('.resume-link-trigger');
   resumeBtns.forEach(btn => {
-    btn.href = p.resumes.industry;
+    btn.href = p.resumes.latest;
+  });
+
+  // Wire Executive CV triggers
+  const cvBtns = document.querySelectorAll('.cv-link-trigger');
+  cvBtns.forEach(btn => {
+    btn.href = p.resumes.cv;
   });
 }
 
@@ -753,10 +760,10 @@ function initContactHub() {
   if (locEl) locEl.textContent = p.location;
 
   const rInd = document.getElementById('dl-ind-resume');
-  if (rInd) rInd.href = p.resumes.industry;
+  if (rInd) rInd.href = p.resumes.latest;
 
   const rAcad = document.getElementById('dl-acad-resume');
-  if (rAcad) rAcad.href = p.resumes.academic;
+  if (rAcad) rAcad.href = p.resumes.cv;
 
   const rDos = document.getElementById('dl-full-dossier');
   if (rDos) rDos.href = p.resumes.dossier;
